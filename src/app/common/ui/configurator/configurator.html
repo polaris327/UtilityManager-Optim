@@ -1,0 +1,132 @@
+<div class="configurator padding-base bordered-box">
+  <ng-transclude></ng-transclude>
+  <ng-form name="vm.form">
+
+    <div class="row">
+      <div
+        class="kwh-entry flex-center-row padding-none"
+        ng-class="{
+          'col-md-6': vm.type,
+          'col-md-3': !vm.type
+        }">
+        <div class="person-select inline-flex flex-parent padding-hor-base">
+          <label
+            class="ui-input-label form-label"
+            translate="{{ 'configurator.configuratorItem.' + (vm.type || 'all') }}">
+          </label>
+          <div class="padding-half inline-flex flex-center-row">
+            <div
+              class="relative-container"
+              ng-repeat="item in vm.configuratorItem"
+              ng-click="vm.select(item)"
+              ng-class="{
+                'deselected' : vm.model.usage != vm.getValue(item)
+              }">
+              <div class="image-select image-{{ vm.getIcon(item) }}"></div>
+              <div
+                ng-if="vm.model.usage == vm.getValue(item)"
+                class="absolute-bottom-left">
+                <icon icon-class="fa-check icon-color-fino"></icon>
+              </div>
+            </div>
+          </div>
+
+          <div
+            ng-if="!vm.model.usage && vm.form.$submitted"
+            class="ui-form-control has-error">
+            <ul class="form-control-messages">
+              <li translate="form.error.selection">
+            </ul>
+          </div>
+        </div>
+        <div
+          ng-if="vm.type"
+          class="text-centered padding-hor-base text-bottom"
+          translate="or">
+        </div>
+        <div class="padding-hor-base flex-favorite-child">
+          <fd-form-control
+            ng-if="vm.type"
+            form="vm.form"
+            name="usage"
+            label="{{ 'configurator.consumption.' + vm.type }}"
+            placeholder=" "
+            required="true"
+            model="vm.model.usage"
+            messages="{
+              'required': 'form.error.required'
+            }">
+          </fd-form-control>
+        </div>
+      </div>
+
+      <div class="flex-center-row padding-none"
+        ng-class="{
+          'col-md-6': vm.type,
+          'col-md-9': !vm.type
+        }">
+        <div
+          ng-if="vm.type"
+          class="seperator margin-hor-base hidden-sm hidden-xs">
+        </div>
+        <div class="configurator-input-container padding-hor-base flex-favorite-child">
+
+          <div class="input-row row">
+            <div ng-class="{
+              'col-md-6 padding-right-none' : !vm.type,
+              'col-md-12 padding-top-mobile padding-right-none' : vm.type
+            }">
+              <fd-form-control
+                ng-if="vm.needsAreaCode"
+                type="text"
+                model="vm.model.area.code"
+                name="code"
+                form="vm.form"
+                placeholder="{{ 'configurator.area' | translate }}"
+                label="configurator.area"
+                required="true"
+                messages="{
+                  'required': 'form.error.required'
+                }">
+              </fd-form-control>
+            </div>
+
+            <div ng-class="{
+              'col-md-6 padding-right-none' : !vm.type,
+              'col-md-12 padding-right-none' : vm.type
+            }">
+              <fd-form-control
+                ng-if="vm.needsLocation"
+                type="suggest"
+                model="vm.postCode"
+                name="postCode"
+                form="vm.form"
+                label="configurator.postCode"
+                placeholder="{{ 'configurator.postCode' | translate }}"
+                required="true"
+                suggest="vm.locationsSuggest"
+                suggest-src="vm.requestLocations($viewValue)"
+                suggest-select="vm.selectLocation($item)"
+                messages="{
+                  'required': 'form.error.required',
+                  'postcode': 'form.error.postcode',
+                  'location': 'form.error.location'
+                }">
+              </fd-form-control>
+            </div>
+          </div>
+
+        </div>
+        <div class="form-button-container inline-flex flex-center padding-right-base">
+          <button
+            class="form-button auto-caps"
+            ng-click="vm.submit($event)"
+            translate="configurator.submit">
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </ng-form>
+</div>

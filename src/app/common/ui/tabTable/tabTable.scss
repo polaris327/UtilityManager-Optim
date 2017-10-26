@@ -1,0 +1,30 @@
+.tab-table {
+  .header-cell {
+    vertical-align: top;
+  }
+
+  .bordered {
+    border-bottom: 1px solid #fff;
+  }
+
+  rating {
+    text-align: left;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  .desktop-container {
+    @media (max-width: 540px) {
+      display: none;
+    }
+  }
+
+  .mobile-container {
+    display: none;
+    @media (max-width: 540px) {
+      display: block;
+    }
+  }
+}

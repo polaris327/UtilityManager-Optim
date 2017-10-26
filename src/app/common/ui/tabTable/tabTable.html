@@ -1,0 +1,53 @@
+<table class="tab-table price-table fill-horizontal">
+  <tbody>
+    <tr
+      ng-repeat="row in vm.rows"
+      ng-class="{
+        'bordered' : row.seperator
+      }">
+      <td
+        ng-attr-colspan="{{ row.colspan }}"
+        class="padding-half header-cell desktop-container"
+        ng-class="{
+          'text-bold': !row.colspan && !row.light
+        }"
+        translate="{{ row.header }}"></td>
+      <td
+        ng-if="row.body"
+        class="padding-half desktop-container">
+        <div
+          ng-if="!vm.template"
+          translate="{{ row.body }}"
+          translate-compile>
+        </div>
+        <div
+          ng-if="vm.template"
+          ng-include="vm.template">
+        </div>
+      </td>
+      <td class="mobile-container">
+        <div
+          ng-attr-colspan="{{ row.colspan }}"
+          class="padding-half header-cell"
+          ng-class="{
+          'text-bold': !row.colspan && !row.light
+        }"
+          translate="{{ row.header }}">
+        </div>
+        <div
+          ng-if="row.body"
+          class="padding-half">
+          <div
+            ng-if="!vm.template"
+            translate="{{ row.body }}"
+            translate-compile>
+          </div>
+          <div
+            ng-if="vm.template"
+            ng-include="vm.template">
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

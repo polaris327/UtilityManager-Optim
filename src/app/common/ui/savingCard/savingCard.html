@@ -1,0 +1,39 @@
+<div class="saving-card flex-parent-row fill-horizontal bordered-box">
+  <div class="image-container flex-center padding-hor-base">
+    <img
+      ng-src="{{ '/assets/' + vm.envService.getCustom() + '/images/' + vm.type + '.png' }}">
+  </div>
+
+  <div class="flex-favorite-child padding-hor-double">
+    <div class="row">
+      <div class="col-sm-8 padding-base">
+        <h3
+          class="margin-none"
+          translate="{{ 'savingCard.' + vm.type }}">
+        </h3>
+        <div class="text-gray">{{ vm.saving.tarif }}</div>
+      </div>
+      <div class="col-sm-4 sm-padding-top-none padding-base text-right">
+        <button
+          class="form-button sm-full-width"
+          translate="savingCard.save"
+          ng-click="vm.action()">
+        </button>
+      </div>
+    </div>
+
+    <div class="saving-container row">
+        <div class="col-sm-8 padding-base">
+          <span
+            class="text-bold"
+            translate="savingCard.saving">
+          </span>
+        </div>
+        <div class="col-sm-4 sm-padding-top-none padding-base text-right">
+          <span class="saving-text text-bold">
+            {{ '+ ' + (vm.saving.saving | currency)  }}
+          </span>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+optimusprime-ui:
+    tty: true
+    environment:
+        - "ENVIRONMENT=${ENVIRONMENT}"
+        - "BUILD=${BUILD}"
+    expose:
+        - "80"
+    image: dockerhub.fino.digital/fino/cd-optimus-prime-ui:${VERSION}

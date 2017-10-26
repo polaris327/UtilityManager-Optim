@@ -1,0 +1,107 @@
+@import '../../styles/variables';
+
+.thank-you {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row-steps {
+  text-align: center;
+  border: 1px solid $primary-color-dark;
+}
+
+.row-steps div {
+  color: $dark-text-color;
+  width: 34%;
+  padding-bottom: 24px;
+  padding-top: 24px;
+}
+
+.row-text {
+  padding: 16px 16px 8px 16px;
+}
+
+.row-text-no-padding-top {
+  padding: 0px 16px 16px 16px;
+}
+
+.row-image {
+  text-align: center;
+}
+
+.row-image i {
+  padding: 16px;
+  width: 130px;
+  height: 130px;
+  line-height: 90px;
+  border: 2px dashed $dark-bg-color;
+}
+
+.spacing-vertical {
+  padding-bottom: 100px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.flex-row-centered {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.flex-row-space_around {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.flex-item {
+  order: 1;
+  align-self: center;
+}
+
+.flex-item-narrow {
+  order: 1;
+  align-self: center;
+  flex-basis: 20%;
+  @media (max-width: 768px) {
+    margin: auto;
+    width: 70% !important;
+  }
+}
+
+h1 {
+  @media (max-width: 320px) {
+    font-size: 30px;
+  }
+}
+
+h2 {
+  @media (max-width: 768px) {
+    font-size: 27px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 22px;
+  }
+}
+
+h3 {
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 20px;
+  }
+}

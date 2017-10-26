@@ -1,0 +1,82 @@
+<div class="landing-page text-center">
+  <section class="image-hero flex-center">
+    <div class="hero-content">
+      <h1
+        class="margin-none text-spaced"
+        translate="landingPage.title">
+      </h1>
+      <div
+        class="padding-base text-small"
+        translate="landingPage.subtitle">
+      </div>
+      <!-- <a href="/login"> -->
+        <button
+          class="form-button big"
+          ng-click="vm.showLogin = true"
+          translate="landingPage.submit">
+        </button>
+      <!-- </a> -->
+    </div>
+  </section>
+
+  <section class="container path-section">
+    <div
+      class="text-gray text-spaced padding-bottom-base"
+      translate="path.header">
+    </div>
+    <h1
+      class="margin-none padding-bottom-double small-container"
+      translate="path.title">
+    </h1>
+    <div class="desktopDiv">
+      <div class="path-container position-relative">
+        <img
+          class="fill-horizontal"
+          ng-src="{{ '/assets/' + vm.envService.getCustom() + '/images/path.png' }}">
+        <div class="path-item-container position-absolute-fill flex-center-row">
+          <div
+            ng-repeat="pathItem in vm.pathItems"
+            class="image-{{ pathItem }}"></div>
+        </div>
+      </div>
+
+      <div class="flex-parent-row path-item-container padding-hor-base">
+        <div
+          class="path-text-item inline-block"
+          ng-repeat="pathItem in vm.pathItems">
+          <h2
+            class="margin-top-none"
+            translate="{{ 'pathItem.' + pathItem + '.title' }}">
+          </h2>
+          <div
+            class="text-gray text-small"
+            translate="{{ 'pathItem.' + pathItem + '.subtitle' }}">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobileDiv">
+      <div class="flex-center-row">
+        <div class="path-item-container" ng-repeat="pathItem in vm.pathItems">
+          <div class="image-{{ pathItem }} inline-block"></div>
+          <div class="desc-container">
+            <h2
+              class="desc-title"
+              translate="{{ 'pathItem.' + pathItem + '.title' }}">
+            </h2>
+            <div
+              class="desc-subtitle text-gray text-small"
+              translate="{{ 'pathItem.' + pathItem + '.subtitle' }}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <login-modal
+    open="vm.showLogin"
+    on-login="vm.onLogin()">
+  </login-modal>
+</div>

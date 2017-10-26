@@ -1,0 +1,12 @@
+<div>
+  <div>
+    {{ 'filter.label.' + (option.translationKey || option.name) | translate:{amount: option.model[option.name]} }}
+  </div>
+  <input
+    type="range"
+    ng-model="option.model[option.name]"
+    min="{{ option.min }}"
+    max="{{ option.max }}"
+    step="{{ option.step }}">
+</div>
+<hr ng-if="!option.hideSeperator">

@@ -1,0 +1,53 @@
+<div class="availability bordered-box padding-hor-base padding-top-base">
+    
+  <div
+    class="padding-bottom-half text-bold"
+    translate="availability.title">
+  </div>
+
+  <ng-form name="vm.form">
+
+    <fd-form-control
+      type="text"
+      model="vm.model.postCode"
+      name="postCode"
+      required="vm.required"
+      form="vm.form"
+      autocomplete="off"
+      placeholder="{{ 'form.postCode' | translate }}"
+      messages="{
+        'postcode': 'form.error.postcode'
+      }">
+    </fd-form-control>
+   
+    <fd-form-control
+      ng-if="vm.citiesSource"
+      form="vm.form"
+      name="cityId"
+      required="vm.required"
+      model="vm.model.cityId"
+      autocomplete="off"
+      placeholder="form.cityId"
+      type="select"
+      type-options="vm.citiesSource">
+    </fd-form-control>
+    
+     <fd-form-control
+       ng-if="vm.streetsSource"
+       form="vm.form"
+       name="streetId"
+       required="vm.required"
+       model="vm.model.streetId"
+       autocomplete="off"
+       placeholder="form.streetId"
+       type="select"
+       type-options="vm.streetsSource">
+     </fd-form-control>
+
+  </ng-form>
+
+  <div
+    class="padding-bottom-half text-decent"
+    translate="availability.description">
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{
+//
+// Direct Bank
+//  Ticket flow and endpoints need to be adjusted for "direct banks"
+//  since they have no branch bank and therefore some steps have to
+//  be handled differently.
+//
+
+  // Flag to identify a customization as direct bank
+  "isDirectBank": false,
+
+//
+// Favicon
+//
+
+  // Path to the favicon
+  "ui.faviconPath": "https://cdn.meinkontowechsel.de/fino/icons/favicon",
+
+//
+// Navbar
+//
+
+  // Path to the brand logo
+  "ui.navbar.brandLogo": "https://cdn.meinkontowechsel.de/fino/images/logo.png",
+
+//
+// Home
+//
+
+  // Path to the home hero image
+  "ui.home.heroImage": {
+    "url": "http://cdn.meinkontowechsel.de/fino/images/hero.jpg",
+    "position": "50% 50%"
+  }
+}

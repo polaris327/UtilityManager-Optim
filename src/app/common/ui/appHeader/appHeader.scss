@@ -1,0 +1,32 @@
+$header-text-color: $light-text-color !default;
+
+.header-content {
+  position: relative;
+}
+
+.header-brand {
+  display: block;
+}
+
+.header-background {
+  background: $dark-bg-color;
+
+  &:after {
+    height: .25rem;
+    width: 100%;
+    content: "";
+    display: block;
+    background: $section-border-color;
+  }
+
+  &.absolute-positioned {
+    position: absolute;
+    width: 100%;
+  }
+
+  .navbar-toggle {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+  }
+}

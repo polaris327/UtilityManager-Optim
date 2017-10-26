@@ -1,0 +1,19 @@
+<div class="filter-toggle flex-center-row">
+  <div class="flex-favorite-child">
+    {{ 'filter.label.' + (option.translationKey || option.name) | translate }}
+  </div>
+  <span 
+    class="toggle"
+    ng-class="{
+      'active': option.model[option.name]
+    }"
+    ng-click="option.model[option.name] = !option.model[option.name]">
+    <span class="toggle-button"></span> 
+  </span>
+  <input
+    style="position: absolute; visibility: hidden;"
+    type="checkbox"  
+    name="{{ option.name }}"
+    ng-model="option.model[option.name]">
+</div>
+<hr ng-if="!option.hideSeperator">

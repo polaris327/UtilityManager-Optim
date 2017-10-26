@@ -1,0 +1,16 @@
+<tab-table
+  rows="vm.offer.sections.ratings"
+  template="ratingCellTemplate">
+</tab-table>
+
+<script type="text/ng-template" id="ratingCellTemplate">
+  <div>
+    <rating
+      class="not-clickable"
+      ng-if="row.body.rating"
+      value="row.body.rating"
+      max="5">
+    </rating>
+    <span>{{row.body.text}}</span>
+  </div>
+</script>

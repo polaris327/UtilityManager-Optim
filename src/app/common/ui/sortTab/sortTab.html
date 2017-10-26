@@ -1,0 +1,17 @@
+<div class="sort-tab flex-center-row">
+  <span
+    class="margin-right-base"
+    translate="sort.title">
+  </span>
+  <ul class="list-unstyled margin-none">
+    <li
+      class="form-control-height padding-hor-base"
+      ng-repeat="value in vm.values"
+      ng-class="{
+        'selected' : vm.sortValue === value
+      }"
+      translate="{{ 'sort.' + value }}"
+      ng-click="vm.sort(value)">
+    </li>
+  </ul>
+</div>

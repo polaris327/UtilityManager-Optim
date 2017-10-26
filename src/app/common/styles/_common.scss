@@ -1,0 +1,107 @@
+@import '~font-awesome/scss/mixins';
+@import '~font-awesome/scss/variables';
+
+.clickable {
+  cursor: pointer;
+}
+
+.closer {
+  @extend .absolute-top-right;
+
+  cursor: pointer;
+  font-size: 2rem;
+
+  &:before {
+    @include fa-icon();
+    content: $fa-var-times;
+  }
+}
+
+.relative-container {
+  position: relative;
+}
+
+.absolute-top-right {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.absolute-bottom-left {
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+}
+
+.closer-floated {
+  @extend .closer;
+
+  float:right;
+  margin: 5px;
+}
+
+.hoverable-text {
+  color: $color-gray-darker;
+
+  &:hover {
+    color: $dark-text-color;
+  }
+}
+
+.hover-text-container {
+  .hover-text {
+    // display: none;
+    visibility: hidden;
+  }
+  &:hover .hover-text {
+    // display: inline-block;
+    visibility: visible;
+  }
+}
+
+.text-bold,
+.text-important {
+  font-family: $font-family-bold;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.text-decent {
+  @extend .text-small;
+  color: $color-gray;
+  font-weight: 100;
+}
+
+.text-bottom {
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+a.cta {
+  color: $dark-text-color;
+  cursor: pointer;
+
+  &:hover {
+    color: $dark-text-color;
+  }
+}
+
+.bordered-box {
+  border: $border-standard;
+  border-radius: $border-radius-base;
+  box-shadow: $shadow-base;
+}

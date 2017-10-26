@@ -1,0 +1,38 @@
+// Import app variables
+// NOTE: These variables are defaults, therefore any already
+//       defined variable will NOT be overwritten!
+@import 'variables';
+
+// Import vendor styles
+@import 'vendor';
+
+html {
+  font-size: 16px;
+  height: 100%;
+  max-height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: 1rem;
+  color: $color-body;
+  background-color: #fff;
+}
+
+.app {
+  background-color: $bg-color;
+  display: block;
+  min-height: 100vh;
+  position: relative;
+}
+
+.app.role-guest {
+  padding-top: 0;
+}
+
+// App component styles
+//  will automatically be injected
+// ------------------------------------
+// inject:app.scss
+// endinject:app.scss

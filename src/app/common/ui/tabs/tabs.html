@@ -1,0 +1,13 @@
+<div class="tabs flex-center-row">
+  <div
+    ng-repeat="tab in vm.tabs"
+    ng-click="vm.select(tab, $event)"
+    class="tab flex-favorite-child padding-vert-base"
+    ng-class="{
+      'selected' : vm.selectedTab == tab
+    }">
+    <h4 
+      class="margin-none"
+      translate="{{ 'tabs.' + tab }}"></h4>
+  </div>
+</div>

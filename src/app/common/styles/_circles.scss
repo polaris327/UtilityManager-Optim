@@ -1,0 +1,32 @@
+.circle {
+  align-items: center;
+  background-color: $primary-color;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  font-size: $circle-font-size;
+  font-style: normal;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+
+  &:after {
+    content: '';
+    float: left;
+    width: auto;
+    padding-bottom: 100%;
+  }
+}
+
+.circle.half-down {
+  border-radius: 50% / 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.circle.half-up {
+  border-radius: 50% / 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}

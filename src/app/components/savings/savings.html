@@ -1,0 +1,35 @@
+<div class="savings small-container flex-center padding-base">
+
+  <div class="text-center">
+    <div class="inline-block bordered-box padding-base margin-vert-base text-center">
+      <div
+        class="text-bold margin-bottom-half"
+        translate="savings.title">
+      </div>
+      <div class="savings-total-text">
+        {{ vm.summedSavings | currency }}
+      </div>
+    </div>
+  </div>
+
+  <h4
+    class="padding-vert-base text-gray text-center"
+    translate="savings.subheader"
+    translate-values="{
+      total: vm.total,
+      amount: vm.amount
+    }"></h4>
+
+  <div>
+    <div
+      class="padding-vert-base"
+      ng-repeat="(type, saving) in vm.savingPositions">
+
+      <saving-card
+        saving="saving"
+        type="type"
+        action="vm.select(type)">
+      </saving-card>
+    </div>
+  </div>
+</div>

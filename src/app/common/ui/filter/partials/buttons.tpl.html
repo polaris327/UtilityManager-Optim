@@ -1,0 +1,13 @@
+<div class="filter-buttons">
+  <div>
+    {{ 'filter.label.' + (option.translationKey || option.name) | translate }}
+  </div>
+  <fd-form-control
+    type="toggle"
+    name="{{ option.name }}"
+    type-options="option.typeOptions"
+    model="option.model[option.name]"
+    form="vm.filterForm">
+  </fd-form-control>
+</div>
+<hr ng-if="!option.hideSeperator">

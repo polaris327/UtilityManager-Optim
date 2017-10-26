@@ -1,0 +1,94 @@
+<div class="contract-card padding-base bordered-box">
+
+  <div class="flex-parent-row">
+
+    <div class="padding-hor-base text-centered name-container">
+      <h4 class="margin-none text-bold">{{ vm.offer.name }}</h4>
+      <div class="margin-top-quarter margin-bottom-base">{{ vm.offer.tariff }}</div>
+      <div class="logo-rating-container padding-10per">
+        <div ng-class="{
+        'image-lightbulb': !vm.offer.logo,
+        'padding-hor-base': vm.offer.logo
+        }">
+          <img class="logo" ng-if="vm.offer.logo" ng-src="{{ vm.offer.logo }}">
+        </div>
+        <div ng-class="{'padding-base': vm.offer.logo}">
+          <rating
+            ng-if="vm.offer.totalRating"
+            class="not-clickable"
+            value="vm.offer.totalRating"
+            max="5">
+          </rating>
+          <div class="margin-top-half text-small">{{ vm.offer.reviewContent }}</div>
+        </div>
+      </div>
+      <!--<span>{{ '(' + v
+        m.offer.totalRating + ')' }}</span>-->
+    </div>
+
+    <div class="flex-favorite-child padding-hor-double text-small padding-10per">
+      <div
+        class="detail-container"
+        ng-repeat="detail in vm.offer.details">
+        <icon icon-class="fa-check icon-color-fino"></icon>
+        <span ng-bind-html="vm.trust(detail)"></span>
+      </div>
+    </div>
+
+    <div class="padding-hor-base text-right">
+      <div class="currency-container">
+        <div class="price text-bold">{{ vm.offer.totalCosts | currency }}</div>
+        <div translate="{{ 'contractCard.intervals.' + vm.offer.interval }}"></div>
+        <div
+          class="savings"
+          ng-if="vm.offer.savings"
+          translate="contractCard.savings"
+          translate-values="{ amount: (vm.offer.savings | currency) }"
+          translate-compile>
+        </div>
+      </div>
+      <a
+        ng-if="vm.offer.url"
+        class="offer-btn form-button margin-top-base sm-full-width"
+        ng-href="{{ vm.offer.url }}"
+        target="_blank">
+        <span 
+          class="sm-full-width"
+          translate="contractCard.cta">
+        </span>
+      </a>
+    </div>
+
+  </div>
+
+  <div>
+    <div
+      class="text-right clickable clearboth"
+      ng-click="vm.expanded = !vm.expanded">
+      <span
+        translate="{{ vm.expanded ? 'less' : 'more' }}"></span>
+      <i
+        class="margin-right-base margin-left-half fa"
+        ng-class="{
+          'fa-caret-up' : vm.expanded,
+          'fa-caret-down' : !vm.expanded
+        }"></i>
+    </div>
+
+    <div
+      ng-if="vm.expanded"
+      class="expanded-container padding-half">
+      <hr class="margin-bottom-none">
+      <tabs
+        tabs="vm.tabs"
+        on-select="vm.selectTab(tab)">
+      </tabs>
+      <div
+        class="padding-top-half"
+        ng-include="'app/common/ui/contractCard/sections/' + vm.selectedTab + '.tpl.html'">
+      </div>
+    </div>
+
+  </div>
+
+</div>

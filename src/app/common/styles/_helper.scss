@@ -1,0 +1,128 @@
+.fill-vertical {
+  height: 100%;
+  max-height: 100%;
+}
+
+.fill-horizontal {
+  width: 100%;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-parent-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-favorite-child {
+  flex: 1;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-full-center-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-overflow {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.scroll-vertical {
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-absolute-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.text-gray {
+  color: $dark-text-color;
+}
+
+.text-spaced {
+  letter-spacing: 0.5px;
+}
+
+.text-small {
+  @extend .text-spaced;
+
+  font-size: $font-size-details;
+}
+
+.browser-ie {
+  .footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .flex-favorite-child {
+    flex: 1 0 auto;
+  }
+
+  .text-container,
+  .suggest-container,
+  .password-container {
+    .form-control.ng-empty {
+      color: #ddd;
+    }
+  }
+}
+

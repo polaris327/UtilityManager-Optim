@@ -1,0 +1,27 @@
+<!-- Place all UI elements intended to be present across all routes in this file -->
+<div
+  class="app flex-parent space-between"
+  ng-if="!vm.showStory"
+  device-detector>
+  <app-header
+    absolute-header="vm.absoluteHeader"
+    show-navbar="vm.showNavbar">
+  </app-header>
+
+  <div class="flex-favorite-child centered-content flex-parent" ui-view></div>
+
+  <app-footer
+    class="footer-pos"
+    show-support="vm.showSupport"
+    show-links="vm.showLinks">
+  </app-footer>
+</div>
+
+<div
+  ng-if="vm.showStory"
+  class="image-intro"
+  ng-style="{
+    'cursor': vm.enableAction ? 'pointer' : 'default'
+  }"
+  ng-click="vm.click()">
+</div>

@@ -1,0 +1,88 @@
+.contract-card {
+  background-color: #ffffff;
+
+  .flex-parent-row {
+    @media (max-width: $screen-sm) {
+      display: block;
+    }
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .savings {
+    color: $accent-color;
+  }
+
+  .clickable:hover {
+    text-decoration: underline;
+  }
+
+  .detail-container {
+    position: relative;
+    padding-left: 30px;
+
+    .icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .name-container {
+    width: 200px;
+    @media (max-width: $screen-sm) and (min-width: 320px) {
+      margin: auto;
+      width: 100%;
+    }
+  }
+
+  .logo-rating-container {
+    display: block;
+    @media (max-width: $screen-sm) and (min-width: 520px) {
+      display: flex;
+    }
+  }
+
+  .padding-10per {
+    @media (max-width: $screen-sm) and (min-width: 320px) {
+      padding: $spacing-base-vert 10%;
+    }
+  }
+
+  .logo {
+    max-width: 100%;
+  }
+
+  .detail-container {
+    padding-top: $spacing-base-vert/8;
+    padding-bottom: $spacing-base-vert/8;
+  }
+
+  .currency-container {
+    @media (max-width: $screen-sm) and (min-width: 320px) {
+      float: right;
+      padding: 0 10%;
+      margin-top: 15px;
+    }
+  }
+
+  .offer-btn {
+    @media (max-width: $screen-sm) and (min-width: 420px) {
+      float: left;
+      margin-left: 10%;
+    }
+  }
+
+  .clearboth {
+    @media (max-width: $screen-sm) {
+      clear: both;
+      padding-top: $spacing-base-vert;
+    }
+  }
+}
+
+.not-clickable * {
+  cursor: default;
+}

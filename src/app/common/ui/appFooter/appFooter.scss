@@ -1,0 +1,34 @@
+.app-footer {
+  position: relative;
+  display: block;
+  background-color: $dark-bg-color;
+
+  &:before {
+    background: $section-border-color;
+    height: .25rem;
+    width: 100%;
+    content: "";
+    display: block;
+    top: 0;
+    position: absolute;
+  }
+
+  .footer-container {
+    margin: 0 auto;
+    max-width: 1020px;
+    padding: 0 1.875rem;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    float: left;
+  }
+
+  a {
+    color: $light-text-color !important;
+  }
+}

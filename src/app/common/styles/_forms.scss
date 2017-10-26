@@ -1,0 +1,153 @@
+.form-fields {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.form-buttons {
+  margin: 0;
+}
+
+.form-header .media {
+  margin-bottom: 15px;
+}
+
+.form-control-row {
+  .ui-form-control {
+    display: inline-block;
+  }
+}
+
+.ui-form-control {
+  // Checkbox & Radio
+  .checkbox,
+  .radio {
+    &,
+    span {
+      margin-top: 0;
+    }
+
+    // Fix dangling position issue with form-control radio and checkbox icon
+    input[type="checkbox"],
+    input[type="radio"] {
+      &:checked + label::before {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+// vButton busy mode
+[v-busy].is-busy {
+  &.btn-default::before {
+    border-top-color: $btn-default-color;
+    border-left-color: $btn-default-color;
+  }
+}
+
+// File upload
+.file-drop {
+  border: 3px dashed $color-gray-light;
+  border-radius: $border-radius-base;
+  padding: 30px 15px;
+  text-align: center;
+  width: 100%;
+
+  .title {
+    margin-bottom: 15px;
+  }
+
+  .body {
+    margin: 15px 0 20px;
+  }
+}
+
+.ui-input-label {
+  font-size: $form-label-font-size;
+}
+
+.ui-form-control .form-control {
+  height: $form-control-height;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:focus,
+  &.ng-dirty {
+    border: 1px solid $form-control-border-color;
+    box-shadow: none;
+  }
+}
+
+label {
+  font-family: $font-family-bold;
+}
+
+.form-button,
+.ui-form-button {
+  font-family: $font-family-base;
+  font-size: $btn-text-size;
+  font-weight: $btn-text-weight;
+  letter-spacing: 0.3px;
+  line-height: 40px;
+  display: inline-block;
+  min-width: 3rem;
+  height: 40px;
+  padding: 0 1.25rem;
+  box-shadow: $shadow-small;
+  transition: all .1s ease-in-out;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  color: $primary-contrast-color;
+  border: none !important;
+  border-color: $primary-color;
+  border-radius: 2.5rem;
+  background: $primary-color;
+
+  &:hover {
+    color: $primary-contrast-color;
+    border-color: #ffe100;
+    background: #ffe100;
+  }
+
+  &.big {
+    padding: 0 $spacing-base-hor*3;
+    letter-spacing: 1.5px;
+    font-weight: 100;
+    font-size: 1.3rem;
+    height: 60px;
+  }
+}
+
+.ui-form-control .input-container.suggest-container .loading-indicator {
+  top: auto;
+  bottom: 6px;
+
+  .spinner {
+    border-top-color: $accent-color;
+  }
+}
+
+.form-control-height {
+  height: $ui-form-control-height;
+}
+
+.ui-form-control .form-control {
+  @extend .form-control-height;
+}
+
+.ui-select-bootstrap > .ui-select-choices,
+.ui-select-bootstrap > .ui-select-no-choice {
+  width: auto;
+}
+
+.ui-select-match-text {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-control-messages {
+  position: absolute;
+  z-index: 1;
+}

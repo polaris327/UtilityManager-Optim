@@ -1,0 +1,153 @@
+.main-panel {
+  background-color: #fff;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-base;
+  padding: $padding-box-more-x;
+  position: relative;
+
+  .info-box {
+    margin-top: -($spacing-base-vert);
+    margin-left: -($spacing-base-hor*2);
+    margin-right: -($spacing-base-hor*2);
+  }
+}
+
+.main-panel-title {
+  text-align: center;
+}
+
+.main-panel-header {
+  margin-bottom: $spacing-base-vert;
+}
+
+.main-panel-controls {
+  position: absolute;
+  top: $spacing-base-vert;
+  right: $spacing-base-hor;
+}
+
+.seperator-vert {
+  display: inline-block;
+  width: $border-width-standard;
+  height: 100%;
+  margin: 0 $spacing-base-vert/2;
+  background-color: $color-gray-light;
+}
+
+.title {
+  width: 100%;
+  margin: 0 0 $spacing-base-vert*1.5 0;
+  color: $color-gray-darker;
+}
+
+.subtitle {
+  width: 100%;
+  margin: 0 0 $spacing-base-vert*1.5 0;
+  color: $color-gray-darker;
+}
+
+.body {
+  text-align: center;
+  margin: $spacing-base-vert 0 $spacing-base-vert;
+  color: $color-gray;
+
+  &.main {
+    font-size: $font-size-main-body;
+    margin-bottom: $spacing-base-vert*2;
+  }
+
+  & > span {
+    max-width: $inner-box-max-width;
+    display: inline-block;
+  }
+}
+
+.indented {
+  margin-left: $spacing-base-hor;
+}
+
+.text-box {
+  @extend .text-center;
+
+  & > div {
+    margin: auto;
+    max-width: 300px;
+  }
+}
+
+.small-container {
+  display: inline-block;
+  width: 100%;
+  max-width: 800px;
+}
+
+.image-container {
+  background-color: lighten($primary-color, 35%);
+
+  img {
+    width: 50px;
+  }
+}
+
+// Split-View
+.ui-layout-frozen {
+  &.ui-layout-row {
+    .ui-layout-container:first-child {
+      margin-bottom: 10px;
+    }
+  }
+  .ui-splitbar {
+    display: none;
+  }
+}
+
+.app-header .level-1 {
+  .navbar-nav > li > a {
+    font-size: .9375rem;
+    padding: 1.375rem 0 .9375rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .container {
+    padding: 0 1.875rem;
+    max-width: 63.75rem;
+    margin: 0 auto;
+  }
+}
+
+.app-footer {
+  .footer__nav li a {
+    display: block;
+    padding-right: .75rem;
+    text-decoration: none;
+  }
+
+  .footer__nav {
+    padding: 0 0 .5rem;
+  }
+
+  .footer__nav.level-1 a {
+    color: #fff;
+    font-size: .875rem;
+  }
+
+  .footer__nav.level-2 a {
+    color: hsla(0,0%,100%,.5);
+    font-size: .75rem;
+  }
+
+  footer {
+    padding: 1.125rem 0 1.5rem;
+    position: relative;
+    z-index: 76;
+  }
+}
+
+.col {
+  padding: .75rem;
+}

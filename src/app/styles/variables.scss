@@ -1,0 +1,221 @@
+// --------------------------------------------------
+// Colors
+// --------------------------------------------------
+$primary-color            : blue !default;
+$primary-color-light      : lighten($primary-color, 25%) !default;
+$primary-color-dark       : darken($primary-color, 25%) !default;
+$primary-contrast-color   : #28373c !default;
+$accent-color             : #4ce77b !default;
+$bg-color                 : #fff !default;
+
+// Brand
+$brand-primary            : $primary-color !default;
+$brand-success            : #72C312 !default;
+$brand-danger             : #ff0000 !default;
+
+// Dark & Light
+$dark-bg-color            : #28373c !default;
+$dark-text-color          : #28373c !default;
+$light-bg-color           : #37474f !default;
+$light-text-color         : #f5f5f5 !default;
+
+// Gray
+$color-gray-darker        : #59626B !default;
+$color-gray-dark          : #7F878F !default; // #7C838C
+$color-gray               : #B1B1B1 !default;
+$color-gray-light         : #efefef !default;
+$color-gray-lighter       : #F8F9FA !default;
+
+// Semantic
+$color-meta               : #858C94 !default;
+$color-title              : #333333 !default;
+$color-body               : #373a3c !default;
+
+// --------------------------------------------------
+// Buttons
+// --------------------------------------------------
+$btn-primary-color        : lighten($brand-primary, 50%) !default;
+$btn-success-color        : lighten($brand-success, 50%) !default;
+$btn-danger-color         : lighten($brand-danger, 50%) !default;
+$btn-text-size            : 0.9rem;
+$btn-text-weight          : 100;
+
+// --------------------------------------------------
+// Font
+// --------------------------------------------------
+$font-family-sans-serif   : "MarkOffcPro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-base         : $font-family-sans-serif !default;
+$font-family-accent       : $font-family-base !default;
+$font-size-details        : 0.85rem !default;
+$font-size-main-body      : 1.2rem !default;
+$font-size-icon-base      : 1.3rem !default;
+$font-family-bold         : "MarkOffcPro Bold";
+$font-family-medium       : "MarkOffcPro Medium";
+
+// --------------------------------------------------
+// Forms
+// --------------------------------------------------
+$form-error-color         : #fff !default;
+$form-error-bg-color      : $brand-danger !default;
+$form-control-border-color: #39444c !default;
+$form-control-height      : 36px;
+$form-label-font-size     : 14px;
+
+// --------------------------------------------------
+// Hero
+// --------------------------------------------------
+$hero-height              : 300px !default;
+
+// --------------------------------------------------
+// Input
+// --------------------------------------------------
+$input-border             : #d9d9d9 !default;
+$input-border-color       : $input-border;
+$ui-form-control-height   : 40px;
+
+// --------------------------------------------------
+// Spacing
+// --------------------------------------------------
+$spacing-base-vert        : 20px !default;
+$spacing-base-hor         : 15px !default;
+
+$padding-box              : $spacing-base-vert $spacing-base-hor !default;
+$padding-box-x            : $spacing-base-hor !default;
+$padding-box-y            : $spacing-base-vert !default;
+$padding-box-less-x       : $spacing-base-vert $spacing-base-hor/2 !default;
+$padding-box-more-x       : $spacing-base-vert $spacing-base-hor*2 !default;
+$padding-box-less-y       : $spacing-base-vert/2 $spacing-base-hor !default;
+$padding-box-more-y       : $spacing-base-vert*2 $spacing-base-hor !default;
+$padding-box-less         : $spacing-base-vert/2 $spacing-base-hor/2 !default;
+$padding-box-more         : $spacing-base-vert*2 $spacing-base-hor*2 !default;
+
+// --------------------------------------------------
+// Border
+// --------------------------------------------------
+$border-color             : $color-gray-light !default;
+$border-color-light       : $color-gray-lighter !default;
+$border-width-standard    : 1px !default;
+$border-standard          : $border-width-standard solid $border-color !default;
+$border-light             : $border-width-standard solid $border-color-light !default;
+$border-radius-base       : 8px !default;
+
+// --------------------------------------------------
+// Shadows
+// --------------------------------------------------
+$shadow-base             : 0 5px 18px 1px $color-gray !default;
+$shadow-small              : 0 2px 8px 1px $color-gray !default;
+
+// --------------------------------------------------
+// Sizes
+// --------------------------------------------------
+$content-max-width        : 1170px !default;
+$inner-box-max-width      : 600px !default;
+$footer-height            : 250px !default;
+
+// --------------------------------------------------
+// Circle
+// --------------------------------------------------
+$circle-font-size         : 18px !default;
+$circle-width             : 40px !default;
+
+// --------------------------------------------------
+// Sidebar
+// --------------------------------------------------
+$sidebar-width            : 100px !default;
+$sidebar-bg-color         : #F5F7FA !default;
+$sidebar-border-color     : $border-color !default;
+$sidebar-section-width    : 400px !default;
+$sidebar-text-width       : 300px !default;
+
+// --------------------------------------------------
+// Badge
+// --------------------------------------------------
+$badge-bg                 : $color-gray !default;
+
+// --------------------------------------------------
+// Breadcrumb
+// --------------------------------------------------
+$breadcrumb-active-top    : $color-gray-lighter !default;
+$breadcrumb-active-bottom : $color-gray-lighter !default;
+$breadcrumb-norm-top      : #fff !default;
+$breadcrumb-norm-bottom   : #fff !default;
+$breadcrumb-border-color  : $color-gray-light !default;
+$breadcrumb-height        : 60 !default;
+
+// --------------------------------------------------
+// Navbar
+// --------------------------------------------------
+$navbar-height                    : 50px !default;
+$navbar-brand-logo-height         : $navbar-height - 10 !default;
+$navbar-brand-logo-order          : 0 !default;
+$navbar-menu-order                : 1 !default;
+$navbar-account-order             : 2 !default;
+$navbar-default-color             : #fff !default;
+$navbar-default-bg                : #fff !default;
+$navbar-default-border            : darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-color        : #fff !default;
+$navbar-default-link-hover-color  : $primary-color!default;
+$navbar-default-link-hover-bg     : transparent !default;
+$navbar-default-link-active-color : $primary-color !default;
+$navbar-default-link-active-bg    : transparent !default;
+
+// --------------------------------------------------
+// Ticket list
+// --------------------------------------------------
+$ticket-header-height : 65px !default;
+$ticket-header-line-height : 20px !default;
+$ticket-footer-height : 50px !default;
+$ticket-footer-line-height : $ticket-header-line-height  !default;
+
+// --------------------------------------------------
+// Info box
+// --------------------------------------------------
+$info-background          : #EEF5FC !default;
+$info-icon-background     : $primary-color !default;
+
+// --------------------------------------------------
+// Progress
+// --------------------------------------------------
+$progress-indicator-width: 7px !default;
+
+// --------------------------------------------------
+// PDF Viewer
+// --------------------------------------------------
+$pdf-viewer-height: 400px;
+
+// --------------------------------------------------
+// Chart colors
+// --------------------------------------------------
+$color-chart-blue               : #407DE6 !default;
+$color-chart-blue-light         : #26BBF0 !default;
+$color-chart-green              : #A8C96E !default;
+$color-chart-green-light        : #66CC80 !default;
+$color-chart-petrol             : #92B5BE !default;
+$color-chart-red                : #CC6164 !default;
+$color-chart-yellow             : #FFBC0B !default;
+$color-chart-gray               : #777 !default;
+
+$chart-classes: (
+  "chart__blue"         $color-chart-blue,
+  "chart__blue-light"   $color-chart-blue-light,
+  "chart__green"        $color-chart-green,
+  "chart__green-light"  $color-chart-green-light,
+  "chart__petrol"       $color-chart-petrol,
+  "chart__red"          $color-chart-red,
+  "chart__yellow"       $color-chart-yellow,
+  "chart__gray"         $color-chart-gray
+) !default;
+
+// --------------------------------------------------
+// Bootstrap Variables
+// --------------------------------------------------
+$bootstrap-sass-asset-helper: true;
+
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+
+// Sections
+$header-height  : 155px;
+$section-border-color: linear-gradient(-90deg,#fff500,#f7f406 14%,#c6f127 48%,#7aeb5b 70%,#00e1af) !default;
+
+$assets-custom  : 'fino' !default;
+$landing-page-path-icon-size : 150px;

@@ -1,0 +1,30 @@
+.savings {
+  .value-container {
+    border-top: $border-standard;
+    border-width: 2px;
+    background-color: #D0F6D1;
+  }
+
+  .saving-title {
+    font-size: 1.8rem;
+  }
+
+  .savings-total-text {
+    color: $primary-color;
+    font-size: 2.5rem;
+  }
+
+  .row {
+    flex-direction: row;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+}
+
+savings-component {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}

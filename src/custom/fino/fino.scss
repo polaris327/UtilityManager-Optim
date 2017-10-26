@@ -1,0 +1,32 @@
+// Import custom variables
+// - These variables are fixed, no !default applied
+@import 'styles/variables';
+
+// Import app styles
+@import '../../app/styles/app';
+
+// Import custom styles
+// [[[ INSERT CUSTOM STYLES HERE ]]]
+
+.image-logo {
+  @extend .image;
+
+  width: 336px;
+  max-width: 100%;
+  height: 64px;
+  background-image: url('/assets/images/logo/logo_wordmark.png');
+}
+
+.image-header {
+  @extend .image;
+
+  width: 100%;
+  height: $header-height;
+  background-size: cover;
+  background-image: none;
+}
+
+// disable footer links
+.footer__nav a {
+  pointer-events: none;
+}

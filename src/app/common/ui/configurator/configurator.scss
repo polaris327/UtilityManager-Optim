@@ -1,0 +1,57 @@
+.configurator {
+  .image-select:hover {
+    cursor: pointer;
+  }
+
+  .ui-form-control {
+    margin-bottom: 0;
+  }
+
+  fd-form-control .ui-form-control.has-feedback .form-control {
+    padding-right: 5px;
+  }
+
+  label {
+    color: $primary-color;
+    text-transform: uppercase;
+    margin-bottom: $spacing-base-vert/2;
+  }
+
+  .form-button-container {
+    align-self: flex-end;
+  }
+
+  .input-row {
+    margin-left: 0;
+    margin-right: 0;
+
+    .padding-top-mobile {
+      @media (max-width: $screen-md) {
+        padding-top: 20px;
+      }
+    }
+  }
+
+  @media (max-width: $screen-md) {
+    .configurator-input-container {
+      padding-left: 0;
+    }
+  }
+
+  @media (max-width: $screen-xs) {
+    .flex-center-row {
+      display: block;
+    }
+    .inline-flex .flex-center-row {
+      display: flex;
+    }
+    .form-button-container {
+      width: 100%;
+    }
+    .configurator-input-container {
+      .input-container {
+        margin-bottom: $spacing-base-vert;
+      }
+    }
+  }
+}

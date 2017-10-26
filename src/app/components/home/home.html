@@ -1,0 +1,150 @@
+<form
+  name="vm.form"
+  novalidate
+  role="form"
+  class="container padding-base fill-vertical home-component">
+
+  <div 
+    ng-if="vm.showMobileSidebar" 
+    id="mobileSidebar" 
+    class="mobile-sidebar"
+    ng-class="{
+      'sidebar-visible': vm.sidebarVisible
+    }">
+    <div class="padding-base sidebar-header">
+      <img src="../../../assets/images/logo/logo_wordmark.png"/>
+      <a class="closebtn" ng-click="vm.closeNav()">&times;</a>
+    </div>
+    
+    <uib-accordion close-others="true">
+      <div 
+        uib-accordion-group 
+        class="panel-default" 
+        heading="{{ 'home.configurator' | translate }}">
+        <configurator
+          type="vm.type"
+          action="vm.configure(usage, area)"
+          model="vm.configuration">
+        </configurator>
+      </div>
+      <div 
+        uib-accordion-group 
+        class="panel-default" 
+        heading="{{ 'home.filter' | translate }}">
+        <filter
+          filter-model="vm.filterModel"
+          on-submit="vm.filter(model)">
+        </filter>
+      </div>
+      <div 
+        ng-if="vm.showAvailability"
+        uib-accordion-group 
+        class="panel-default" 
+        heading="{{ 'home.availability' | translate }}">
+        <availability></availability>
+      </div>
+      <div 
+        ng-if="vm.showContractSummary"
+        uib-accordion-group 
+        class="panel-default" 
+        heading="{{ 'home.contractSummary' | translate }}">
+        <contract-summary
+          type="vm.type"
+          user="vm.user"
+          contract="vm.contract"
+          tariff-change="vm.tariffChange(tariff)">
+        </contract-summary>
+      </div>
+    </uib-accordion>
+  </div>
+
+  <h2
+    ng-if="!vm.showMobileSidebar"
+    class="padding-base"
+    translate="{{ 'home.title.' + vm.type }}">
+  </h2>
+
+  <configurator
+    ng-if="!vm.showMobileSidebar"
+    type="vm.type"
+    action="vm.configure(usage, area)"
+    model="vm.configuration">
+  </configurator>
+
+  <loading
+    fullscreen="vm.compared"
+    ng-if="vm.compareBusy">
+  </loading>
+
+  <div
+    ng-if="vm.compared"
+    class="padding-top-base">
+
+    <sort-tab
+      values="vm.sortTabs"
+      on-sort="vm.sort(value)">
+    </sort-tab>
+
+    <div
+      class="row padding-top-base">
+      <div ng-if="!vm.showMobileSidebar" class="col-lg-4">
+        <div
+          class="padding-bottom-base"
+          ng-if="vm.showContractSummary">
+          <contract-summary
+            type="vm.type"
+            user="vm.user"
+            contract="vm.contract"
+            tariff-change="vm.tariffChange(tariff)">
+          </contract-summary>
+        </div>
+
+        <div
+          class="padding-bottom-base"
+          ng-if="vm.showAvailability">
+          <availability>
+          </availability>
+        </div>
+
+        <div class="padding-bottom-base">
+          <filter
+            filter-model="vm.filterModel"
+            on-submit="vm.filter(model)">
+          </filter>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div
+          class="padding-bottom-base"
+          ng-repeat="offer in vm.offers">
+          <contract-card
+            offer="offer">
+          </contract-card>
+        </div>
+        <div
+          class="text-centered"
+          ng-if="vm.allOffers.length > vm.entriesPerPage">
+          <ul
+            uib-pagination
+            total-items="vm.allOffers.length"
+            ng-model="vm.currentPage"
+            ng-change="vm.update()"
+            max-size="5"
+            boundary-link-numbers="true">
+          </ul>
+        </div>
+
+        <div
+          class="text-box bordered-box padding-base"
+          ng-if="!vm.offers.length">
+          <div
+            translate="home.noOffers">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</form>

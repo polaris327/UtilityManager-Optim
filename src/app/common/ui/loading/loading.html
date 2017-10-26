@@ -1,0 +1,23 @@
+<div
+  class="loading flex-center padding-base"
+  ng-class="{
+    'fullscreen': vm.fullscreen
+  }">
+  <h3
+    ng-if="!vm.hideCaption"
+    class="margin-bottom-double"
+    translate="loading.message">
+  </h3>
+   <svg class="spinner" width="100px" height="100px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="MyGradient">
+        <stop offset="0%"  stop-color="#fff500"/>
+        <stop offset="14%" stop-color="#f7f406"/>
+        <stop offset="48%" stop-color="#c6f127"/>
+        <stop offset="70%" stop-color="#7aeb5b"/>
+        <stop offset="100%" stop-color="#00e1af"/>
+      </linearGradient>
+    </defs>
+    <circle class="path gradient" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+  </svg>
+</div>

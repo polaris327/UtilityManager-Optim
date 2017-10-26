@@ -1,0 +1,185 @@
+.image {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.image-header {
+  @extend .image;
+
+  width: 100%;
+  height: $header-height;
+  background-size: cover;
+  background-image: url('/assets/images/header-bg.png');
+}
+
+.image-logo {
+  @extend .image;
+
+  width: 168px;
+  height: 32px;
+  background-image: url('/assets/images/logo/logo.svg');
+}
+
+.image-single {
+  @extend .image;
+
+  height: 30px;
+  width: 30px;
+  background-image: url('/assets/images/single.png');
+}
+
+.image-partner {
+  @extend .image;
+
+  height: 30px;
+  width: 45px;
+  background-image: url('/assets/images/partner.png');
+}
+
+.image-smallFamily {
+  @extend .image;
+
+  height: 30px;
+  width: 60px;
+  background-image: url('/assets/images/smallFamily.png');
+}
+
+.image-largeFamily {
+  @extend .image;
+
+  height: 30px;
+  width: 60px;
+  background-image: url('/assets/images/largeFamily.png');
+}
+
+.image-slow {
+  @extend .image;
+
+  height: 30px;
+  width: 30px;
+  background-image: url('/assets/images/single.png');
+}
+
+.image-medium {
+  @extend .image;
+
+  height: 30px;
+  width: 50px;
+  background-image: url('/assets/images/partner.png');
+}
+
+.image-fast {
+  @extend .image;
+
+  height: 30px;
+  width: 65px;
+  background-image: url('/assets/images/smallFamily.png');
+}
+
+.image-rapid {
+  @extend .image;
+
+  height: 30px;
+  width: 60px;
+  background-image: url('/assets/images/largeFamily.png');
+}
+
+.image-intro {
+  @extend .image;
+
+  height: 100vh;
+  width: 100vw;
+  background-image: url('/assets/images/intro.png');
+  background-position-x: 50%;
+}
+
+.image-lightbulb {
+  @extend .image;
+
+  display: inline-block;
+  height: 80px;
+  width: 40px;
+  background-image: url('/assets/images/lightbulb.png');
+  filter: contrast(50%);
+}
+
+.image-hero {
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('/assets/#{$assets-custom}/images/hero.png');
+  background-position: 50% 50%;
+}
+
+.image-path {
+  @extend .image;
+
+  height: 100%;
+  width: 100%;
+  background-image: url('/assets/#{$assets-custom}/images/path.png');
+}
+
+.image-path-item {
+  @extend .image;
+  @extend .flex-center;
+
+  height: $landing-page-path-icon-size;
+  width: $landing-page-path-icon-size;
+  border-radius: 80px;
+  box-shadow: $shadow-base;
+  background-color: #fff;
+}
+
+.image-save {
+  @extend .image-path-item;
+
+  &:before {
+    width: 62px;
+    height: 72px;
+    content: url('/assets/#{$assets-custom}/images/save.png');
+  }
+}
+
+.image-compare {
+  @extend .image-path-item;
+
+  &:before {
+    width: 61px;
+    height: 62px;
+    content: url('/assets/#{$assets-custom}/images/compare.png');
+  }
+}
+
+.image-switch {
+  @extend .image-path-item;
+
+  &:before {
+    width: 62px;
+    height: 62px;
+    content: url('/assets/#{$assets-custom}/images/switch.png');
+  }
+}
+
+.deselected:not(:hover) .image {
+  filter: opacity(50%);
+}
+
+.seperator {
+  width: 2px;
+  align-self: stretch;
+  background-color: $color-gray-light;
+}
+
+.glyphicon {
+  font-family: FontAwesome;
+}
+
+.glyphicon-star:before {
+  color: rgba(255,138,0,1);
+  content: '\f006';
+}
+
+.glyphicon-star.star-on:before {
+  color: rgba(255,138,0,1);
+  content: '\f005';
+}

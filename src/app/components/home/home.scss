@@ -1,0 +1,108 @@
+$sidebar-border: 2px solid transparent;
+
+.home-component {
+  .pagination > li > a, .pagination > li > span{
+    color:black !important;
+  }
+
+  .text-box {
+    background-color: $color-gray-light;
+  }
+
+  .showSidebar {
+    visibility: visible;
+  }
+
+  .showSidebar.hide {
+    visibility: hidden;
+  }
+
+  /* Start Mobile Sidebar */
+  /* The side navigation menu */
+  .mobile-sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 95%; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Stay on top */
+    top: 0;
+    left: -100%;
+    background-color: #fff; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    border-right: $border-standard;
+    border-color: $color-gray;
+
+    &.sidebar-visible {
+      left: 0;
+    }
+
+    .panel-open .panel-heading {
+      border-color: $primary-color;
+    }
+
+    .panel-default {
+      margin-top: 1px;
+      border: none;
+    }
+
+    .panel-heading {
+      padding: $padding-box;
+      border-radius: 0;
+      border-left: $sidebar-border;
+      background-color: #fff;
+    }
+
+    .accordion-toggle {
+      padding: 0;
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    img {
+      width: 100px;
+      height: 35px;
+    }
+
+    /* The navigation menu links */
+    a {
+      text-decoration: none;
+      font-size: $font-size-main-body;
+      line-height: $font-size-main-body;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    /* Position and style the close button (top right corner) */
+    .closebtn {
+      font-size: 36px;
+    }
+  }
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .mobile-sidebar {padding-top: 15px;}
+    .mobile-sidebar a {font-size: 18px;}
+  }
+
+  fd-form-button {
+    //display: inline-block;
+
+    button {
+      text-align: center;
+      width: 290px;
+      max-width: 90%;
+      margin: 0 20px;
+
+      @media (max-width: 360px) {
+        span {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+  /* End Mobile Sidebar */
+}

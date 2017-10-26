@@ -1,0 +1,32 @@
+<div
+  class="header-background"
+  ng-class="{
+    'absolute-positioned': vm.absoluteHeader
+  }">
+  <div
+    class="app-header padding-top-base padding-hor-base container"
+    ng-class="{
+      'padding-bottom-base': !vm.showNavbar
+    }">
+    <header class="header">
+      <div class="header-content">
+        <span class="header-brand image-logo"></span>
+      </div>
+    </header>
+
+    <div ng-if="vm.showNavbar" class="navbar-default">
+      <button
+        type="button"
+        class="navbar-toggle"
+        ng-click="vm.toggleSidebar()">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <navbar
+      ng-if="vm.showNavbar">
+    </navbar>
+  </div>
+</div>

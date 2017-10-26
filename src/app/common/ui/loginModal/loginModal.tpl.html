@@ -1,0 +1,36 @@
+<div
+  class="flex-center fill-vertical login-modal">
+  <div
+    class="login-modal-container bordered-box">
+    <h1
+      class="margin-none padding-top-base text-center"
+      translate="login.title">
+    </h1>
+    <form
+      class="padding-base"
+      name="vm.loginForm"
+      novalidate>
+      <figo-login
+        search-fn="vm.searchBanks(search)"
+        login-fn="vm.login(resource, credentials)"
+        login-form="vm.loginForm">
+        <fields-info>
+          <div class="padding-top-half">
+            <fd-form-control
+              class="agb-check-text"
+              name="agbCheck"
+              form="vm.loginForm"
+              model="vm.agbCheck"
+              type="checkbox"
+              label="login.agb"
+              required="true"
+              messages="{
+                'required': 'form.error.required'
+              }">
+            </fd-form-control>
+          </div>
+        </fields-info>
+      </figo-login>
+    </form>
+  </div>
+</div>

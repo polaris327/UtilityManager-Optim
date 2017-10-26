@@ -1,0 +1,78 @@
+// Import app variables
+// NOTE: These variables are defaults, therefore any already
+//       defined variable will NOT be overwritten!
+@import 'variables';
+
+// Import vendor styles
+@import 'vendor';
+
+html {
+  font-size: 16px;
+  height: 100%;
+  max-height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: 1rem;
+  color: $color-body;
+  background-color: #fff;
+}
+
+.app {
+  background-color: $bg-color;
+  display: block;
+  min-height: 100vh;
+  position: relative;
+}
+
+.app.role-guest {
+  padding-top: 0;
+}
+
+// App component styles
+//  will automatically be injected
+// ------------------------------------
+// inject:app.scss
+@import '../common/styles/_animations.scss';
+@import '../common/styles/_badge.scss';
+@import '../common/styles/_circles.scss';
+@import '../common/styles/_common.scss';
+@import '../common/styles/_fonts.scss';
+@import '../common/styles/_forms.scss';
+@import '../common/styles/_helper.scss';
+@import '../common/styles/_images.scss';
+@import '../common/styles/_indentation.scss';
+@import '../common/styles/_layout.scss';
+@import '../common/styles/_list.scss';
+@import '../common/styles/_numbered.scss';
+@import '../common/styles/_responsive.scss';
+@import '../common/styles/_spinner.scss';
+@import '../common/styles/_tables.scss';
+@import '../components/home/home.scss';
+@import '../components/landingPage/landingPage.scss';
+@import '../components/savings/savings.scss';
+@import '../components/user/user.scss';
+@import '../common/ui/appFooter/appFooter.scss';
+@import '../components/thankYou/thankYou.scss';
+@import '../common/ui/cdLayout/common-ui.tmp.scss';
+@import '../common/ui/appHeader/appHeader.scss';
+@import '../common/ui/availability/availability.scss';
+@import '../common/ui/configurator/configurator.scss';
+@import '../common/ui/contractCard/contractCard.scss';
+@import '../common/ui/costs/costs.scss';
+@import '../common/ui/contractSummary/contractSummary.scss';
+@import '../common/ui/filter/filter.scss';
+@import '../common/ui/loginModal/loginModal.scss';
+@import '../common/ui/hero/hero.scss';
+@import '../common/ui/icon/icon.scss';
+@import '../common/ui/loading/loading.scss';
+@import '../common/ui/supportFooter/supportFooter.scss';
+@import '../common/ui/tabTable/tabTable.scss';
+@import '../common/ui/tabs/tabs.scss';
+@import '../common/ui/typeIcon/typeIcon.scss';
+@import '../common/ui/savingCard/savingCard.scss';
+@import '../common/ui/navbar/navbar.scss';
+@import '../common/ui/sortTab/sortTab.scss';
+// endinject:app.scss

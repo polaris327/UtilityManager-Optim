@@ -1,0 +1,35 @@
+<div class="filter-component padding-base bordered-box">
+  <div
+    class="text-bold margin-bottom-base"
+    translate="filter.title">
+  </div>
+  <ng-form form="vm.filterForm">
+    <div
+      ng-repeat="option in vm.filter.filter"
+      ng-include="'app/common/ui/filter/partials/' + option.type + '.tpl.html'">
+    </div>
+    <div>
+      <div class="padding-vert-base">
+        <fd-form-button
+          btn-type="button"
+          on-click="vm.extended = !vm.extended"
+          label="{{ vm.filterExtendedButtonText | translate }}">
+        </fd-form-button>
+      </div>
+      <div ng-if="vm.extended">
+        <div
+          ng-repeat="option in vm.filter.extended"
+          ng-include="'app/common/ui/filter/partials/' + option.type + '.tpl.html'">
+        </div>
+      </div>
+    </div>
+  </ng-form>
+
+  <div class="padding-top-base padding-bottom-half primary-button-container">
+    <fd-form-button
+      btn-type="primary"
+      on-click="vm.submit($event)"
+      label="{{ 'filter.submit' | translate }}">
+    </fd-form-button>
+  </div>
+</div>

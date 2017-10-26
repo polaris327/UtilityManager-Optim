@@ -1,0 +1,37 @@
+.sort-tab {
+  justify-content: flex-end;
+
+  ul, li {
+    display: inline-block;
+
+    @media (max-width: 320px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  li {
+    cursor: pointer;
+    background-color: $color-gray-light;
+    border: 1px solid #fff;
+  }
+
+  li.selected,
+  li:hover {
+    background-color: $color-gray;
+    color: #fff;
+  }
+
+  li.form-control-height {
+    line-height: $ui-form-control-height;
+  }
+
+  li:first-of-type {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+
+  li:last-of-type {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+}

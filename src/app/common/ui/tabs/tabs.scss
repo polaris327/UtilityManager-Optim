@@ -1,0 +1,18 @@
+.tabs {
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  
+  @media (max-width: 540px) {
+    display: inherit;
+  }
+
+  .tab.selected,
+  .tab:hover {
+    border-bottom: 2px solid $accent-color;
+  }
+
+  .tab:not(.selected):not(:hover) {
+    border-bottom: 2px solid transparent;
+  }
+}

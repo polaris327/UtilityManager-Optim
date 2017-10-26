@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default level-1">
+  <div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" uib-collapse="vm.navCollapsed">
+      <ul class="nav navbar-nav">
+        <li
+          class="padding-right-double"
+          ui-sref-active="active"
+          ng-repeat="(key, tab) in vm.navbarTabs track by tab.ref"
+          ng-class="{
+            'active': vm.isActive(key)
+          }">
+          <a
+            ng-class="{
+              'active': vm.isActive(key)
+            }"
+            ui-sref="{{ tab.ref }}" >
+            <type-icon type="key"></type-icon>
+            <span
+              role="button"
+              translate="{{ tab.text }}">
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

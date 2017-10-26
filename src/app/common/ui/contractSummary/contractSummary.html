@@ -1,0 +1,66 @@
+<div class="contract-summary padding-base bordered-box">
+  <ng-form form="vm.summaryForm">
+
+    <div>
+      <div
+        class="text-bold margin-bottom-half"
+        translate="contractSummary.title">
+      </div>
+
+      <div
+        translate="{{ 'contractSummary.usage.' + vm.type }} "
+        translate-values="{ amount: vm.user.usage }">
+      </div>
+
+      <div
+        translate="contractSummary.location"
+        translate-values="{ location: vm.user.location }">
+      </div>
+
+      <!--<div class="padding-top-half text-bold">
+        <a class="cta">
+          <span translate="contractSummary.edit"></span>
+        </a>
+        <i class="fa fa-edit margin-left-half"></i>
+      </div>-->
+    </div>
+
+    <hr>
+
+    <div ng-if="vm.loaded">
+      <div
+        class="text-bold margin-bottom-half"
+        translate="{{ 'contractSummary.contract.title.' + vm.type }}">
+      </div>
+
+      <fd-form-control
+        form="vm.summaryForm"
+        name="supplier"
+        model="vm.contract.supplier"
+        on-keypress="vm.loadOptions($event)"
+        placeholder="form.supplier"
+        type="select"
+        type-options="vm.supplierTypeOptions">
+      </fd-form-control>
+
+      <fd-form-control
+        form="vm.summaryForm"
+        name="tariff"
+        model="vm.contract.tariff"
+        placeholder="form.tariff"
+        type="select"
+        type-options="vm.tariffTypeOptions">
+      </fd-form-control>
+
+      <div
+        class="text-decent"
+        translate="contractSummary.disclaimer">
+      </div>
+    </div>
+
+    <div ng-if="!vm.loaded">
+      <loading hide-caption="true"></loading>
+    </div>
+
+  </ng-form>
+</div>

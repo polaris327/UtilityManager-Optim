@@ -1,0 +1,70 @@
+<div class="costs bordered-box">
+  <ng-form
+    name="vm.form">
+    <div class="flex-parent-row">
+
+      <div class="image-container flex-center padding-hor-base">
+        <img
+          ng-src="{{ '/assets/' + vm.envService.getCustom() + '/images/' + vm.step.key + '.png' }}">
+      </div>
+
+      <div
+        ng-if="vm.show"
+        class="flex-favorite-child padding-base animate-if">
+        <div
+          class="costs-step-text padding-bottom-base text-gray"
+          translate="{{ 'costs.text.' + vm.step.key }}"
+          translate-values="vm.translateValues"
+          translate-compile>
+        </div>
+
+        <div
+          ng-if="vm.step.type === 'question'"
+          class="costs-step-question row flex-row-centered">
+          <div class="col-xs-6 padding-hor-base">
+            <button
+              type="button"
+              class="form-button"
+              translate="costs.no"
+              ng-click="vm.step.type = 'input'">
+            </button>
+          </div>
+          <div class="col-xs-6 padding-hor-base">
+            <button
+              type="submit"
+              class="form-button"
+              translate="costs.yes"
+              ng-click="vm.nextStep()">
+            </button>
+          </div>
+        </div>
+
+        <div
+          ng-if="vm.step.type === 'input'"
+          class="costs-step-input row">
+          <div class="col-sm-9 padding-left-base margin-bottom-20">
+            <fd-form-control
+              form="vm.form"
+              name="{{ vm.step.key }}"
+              placeholder="{{ 'costs.' + vm.step.key }}"
+              required="true"
+              model="vm.model[vm.step.key]"
+              messages="{
+                'required': 'form.error.required'
+              }">
+            </fd-form-control>
+          </div>
+          <div class="col-sm-3 padding-hor-base">
+            <button
+              type="submit"
+              class="form-button"
+              translate="costs.ok"
+              ng-click="vm.nextStep()">
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </ng-form>
+</div>
