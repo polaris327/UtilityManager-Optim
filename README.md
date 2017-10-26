@@ -1,15 +1,15 @@
 # Cd optimus prime ui
 
-Frontend of the Cd optimus prime ui by fino digital
+Frontend of the Cd optimus prime ui
 
 ## Pre-requisites
 
-Make sure you have finos private npm repo setup on your device. Instructions see: https://gitlab.com/fino/nexus/blob/master/README.md#npm-configuration
+Make sure you have our private npm repo setup on your device.
 
 ## Setup
 ```
-git clone git@gitlab.com:fino/optimusprime-ui.git
-cd cd-optimus-prime-ui
+git clone https://github.com/polaris327/UtilityManager-Optim.git
+cd UtilityManager-Optim
 npm install
 ```
 
